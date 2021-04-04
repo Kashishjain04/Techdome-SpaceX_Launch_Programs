@@ -52,11 +52,10 @@ const Filters = () => {
     <div className="filters">
       <h2>Filters</h2>
       <div className="filters__subHead">
-        Launch Year <hr />
+        Launch Year
+        <hr />
       </div>
-      <div onClick={() => reset(0)} className="filters__reset">
-        Reset
-      </div>
+      <i onClick={() => reset(0)} className="bx bx-reset" />
       <div className="filters__options">
         {filterYears.map((year) => (
           <p
@@ -69,11 +68,10 @@ const Filters = () => {
         ))}
       </div>
       <div className="filters__subHead">
-        Successful Launch <hr />
+        Successful Launch
+        <hr />
       </div>
-      <div onClick={() => reset(1)} className="filters__reset">
-        Reset
-      </div>
+      <i onClick={() => reset(1)} className="bx bx-reset" />
       <div className="filters__options">
         <p
           onClick={() => filterLaunch("true")}
@@ -89,11 +87,10 @@ const Filters = () => {
         </p>
       </div>
       <div className="filters__subHead">
-        Successful Landing <hr />
+        Successful Landing
+        <hr />
       </div>
-      <div onClick={() => reset(2)} className="filters__reset">
-        Reset
-      </div>
+      <i onClick={() => reset(2)} className="bx bx-reset" />
       <div className="filters__options">
         <p
           onClick={() => filterLand("true")}

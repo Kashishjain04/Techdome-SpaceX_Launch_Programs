@@ -27,12 +27,11 @@ function App() {
 
   return (
     <div>
-      <div className="scroll bottom" onClick={scrollToBottom}>
-        ^
-      </div>
-      <div className="scroll top" onClick={scrollToTop}>
-        ^
-      </div>
+      <i
+        className="scroll bottom bx bxs-chevron-down"
+        onClick={scrollToBottom}
+      />
+      <i className="scroll top bx bxs-chevron-up" onClick={scrollToTop} />
       <h2 className="heading">SpaceX Launch Programs</h2>
       <div className="app">
         <Filters />
