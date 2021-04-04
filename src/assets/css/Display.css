@@ -36,6 +36,10 @@
   .display__card {
     width: auto;
   }
+  .display > h2 {
+    text-align: center;
+    margin: 20px auto;
+  }
 }
 @media only screen and (min-width: 820px) and (max-width: 1120px) {
   .display__flights {

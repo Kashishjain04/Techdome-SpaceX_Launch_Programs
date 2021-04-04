@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import actions from "./api/actions";
 import Display from "./Components/Display";
 import Filters from "./Components/Filters";
-import { setData } from "./redux/mainSlice";
+import { selectData, setData } from "./redux/mainSlice";
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(),
+    flights = useSelector(selectData);
 
   useEffect(() => {
     const fetchInitial = async () => {
@@ -27,11 +28,15 @@ function App() {
 
   return (
     <div>
-      <i
-        className="scroll bottom bx bxs-chevron-down"
-        onClick={scrollToBottom}
-      />
-      <i className="scroll top bx bxs-chevron-up" onClick={scrollToTop} />
+      {flights?.length !== 0 && (
+        <>
+          <i
+            className="scroll bottom bx bxs-chevron-down"
+            onClick={scrollToBottom}
+          />
+          <i className="scroll top bx bxs-chevron-up" onClick={scrollToTop} />
+        </>
+      )}
       <h2 className="heading">SpaceX Launch Programs</h2>
       <div className="app">
         <Filters />

@@ -99,7 +99,7 @@ const Filters = () => {
           True
         </p>
         <p
-          onClick={() => filterLand("true")}
+          onClick={() => filterLand("false")}
           className={currentFilter[2] === "false" ? "active" : ""}
         >
           False

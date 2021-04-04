@@ -1,19 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 html {
   scroll-behavior: smooth;
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ddd;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 .app {
   display: grid;
@@ -50,6 +44,6 @@ code {
 @media only screen and (max-width: 700px) {
   .app {
     grid-template-columns: auto;
-    height: 250vh;
+    height: fit-content;
   }
 }
