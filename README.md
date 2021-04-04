@@ -6,7 +6,6 @@
 
 ## Media queries breakpoints
 
-<hr />
 
 - width < 820px
 
