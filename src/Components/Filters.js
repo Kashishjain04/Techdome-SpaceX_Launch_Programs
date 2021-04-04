@@ -6,6 +6,7 @@ import {
   setCurrentFilter,
   setData,
   selectCurrentFilter,
+  setAllFilters,
 } from "../redux/mainSlice";
 
 const Filters = () => {
@@ -16,11 +17,9 @@ const Filters = () => {
     .fill()
     .map((_, index) => 2006 + index);
 
-  const reset = async (type) => {
-    let t = [...currentFilter];
-    dispatch(setCurrentFilter({ type, value: null }));
-    t[type] = null;
-    const data = await actions.filter(t[0], t[1], t[2]);
+  const reset = async () => {
+    dispatch(setAllFilters([null, null, null]));
+    const data = await actions.initial();
     dispatch(setData(data));
   };
 
@@ -50,12 +49,14 @@ const Filters = () => {
 
   return (
     <div className="filters">
-      <h2>Filters</h2>
+      <div className="filters__head">
+        <h2>Filters</h2>
+        <i onClick={reset} className="bx bx-reset" />
+      </div>
       <div className="filters__subHead">
         Launch Year
         <hr />
       </div>
-      <i onClick={() => reset(0)} className="bx bx-reset" />
       <div className="filters__options">
         {filterYears.map((year) => (
           <p
@@ -71,7 +72,7 @@ const Filters = () => {
         Successful Launch
         <hr />
       </div>
-      <i onClick={() => reset(1)} className="bx bx-reset" />
+      {/* <i onClick={() => reset(1)} className="bx bx-reset" /> */}
       <div className="filters__options">
         <p
           onClick={() => filterLaunch("true")}
@@ -90,7 +91,7 @@ const Filters = () => {
         Successful Landing
         <hr />
       </div>
-      <i onClick={() => reset(2)} className="bx bx-reset" />
+      {/* <i onClick={() => reset(2)} className="bx bx-reset" /> */}
       <div className="filters__options">
         <p
           onClick={() => filterLand("true")}
